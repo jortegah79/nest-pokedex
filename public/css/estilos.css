@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+#Container {
+  width: 100%;
+  margin: 0px auto;
+  background: #cee5d0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#Header {
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 5px 3px #888;
+}
+#Icono {
+  display: flex;
+  flex-direction: row;
+}
+#Icono img {
+  height: auto;
+  width: 10%;
+}
+#Icono h1 {
+  margin-left: 20px;
+  font-size: 2.4em;
+  color: #5800ff;
+}
+#Navbar1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+a {
+  padding: 5px;
+  background: #5800ff;
+  margin: 10px 15px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  box-shadow: 2px 0px 3px 1px #fff;
+  /*Ahora añadimos una pequeña animacion*/
+  animation-name: reloj;
+  animation-duration: 0.75s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+@keyframes reloj {
+  0% {
+    box-shadow: 2px 0px 2px 1px #ccc;
+  }
+  12% {
+    box-shadow: 1px 1px 2px 1px #ccc;
+  }
+  25% {
+    box-shadow: 0px 2px 2px 1px #ccc;
+  }
+  37% {
+    box-shadow: -1px 1px 2px 1px #ccc;
+  }
+  50% {
+    box-shadow: -2px 0px 2px 1px #ccc;
+  }
+  62% {
+    box-shadow: -1px -1px 2px 1px #ccc;
+  }
+  75% {
+    box-shadow: 0px -2px 2px 1px #ccc;
+  }
+  87% {
+    box-shadow: 1px -1px 2px 1px #ccc;
+  }
+  100% {
+    box-shadow: 2px 0px 2px 1px #ccc;
+  }
+}
+a:hover {
+  background: #fff;
+  color: #5800ff;
+}
+h2 {
+  font-size: 2em;
+  margin: 20px 0;
+}
+#Main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+#Presentacion {
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.texto {
+  margin-top: 30px;
+  width: 90%;
+}
+#aside {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.caja {
+  background: #000;
+  flex-basis: 1fr;
+}
+.caja img {
+  width: 100%;
+}
+.widContainer {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 50px 0;
+  justify-content: space-evenly;
+}
+.widget {
+  background-color: #5800ff;
+  height: 150px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  color: #ffc600;
+  flex-shrink: 1;
+  flex-grow: 2;
+}
+article p {
+  margin: 20px 0;
+}
+#Footer {
+  background: #000;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -2px 0px 5px 1px #5800ff;
+}
+/***************************************cambios de 980pz////*/
+@media screen and (max-width: 980px) {
+  #Footer {
+    height: 130px;
+    flex-wrap: wrap;
+  }
+  #Navbar1 {
+    width: 100%;
+  }
+  #Navbar1 a {
+    flex-grow: 2;
+    flex-shrink: 1;
+    text-align: center;
+  }
+  #Icono h1 {
+    font-size: 2em;
+  }
+}
+/***********************Aqui esta la medida de 800 px de pantalla *********************/
+
+@media screen and (max-width: 800px) {
+  #Main {
+    flex-direction: column;
+  }
+
+  
+
+  #aside {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 20px;
+  }
+  #navbar2 {
+    display: flex;
+    flex-direction: column;
+  }
+  #Rrss {
+    display: flex;
+    flex-direction: column;
+  }
+  #Footer {
+    height: 100%;
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 480px) {
+  #Icono img {
+    width: 10%;
+    height: auto;
+  }
+  #Icono h1 {
+    font-size: 1.8em;
+  }
+  .widContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 30px 0;
+    justify-content: flex-start;
+  }
+  .widget {
+    margin: 10px 0px;
+  }
+  #aside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 20px;
+  }
+  a {
+    flex-grow: 2;
+    flex-shrink: 1;
+    text-align: center;
+  }
+}
