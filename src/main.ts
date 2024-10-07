@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Validator } from 'class-validator';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
@@ -8,9 +7,14 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({
     whitelist:true,
-    forbidNonWhitelisted:true
+    forbidNonWhitelisted:true,
+    //para permitir que se realice una transformación hacia los modelos 
+    transform:true,
+    transformOptions:{
+      enableImplicitConversion:true
+    }
   }));
   app.setGlobalPrefix("api/v2");
-  await app.listen(3000);
+  await app.listen(process.env.PUERTO);
 }
 bootstrap();
